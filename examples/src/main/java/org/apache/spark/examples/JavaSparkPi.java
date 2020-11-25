@@ -33,7 +33,7 @@ public final class JavaSparkPi {
   public static void main(String[] args) throws Exception {
     SparkSession spark = SparkSession
       .builder()
-      .appName("JavaSparkPi")
+      .appName("JavaSparkPi").master("local")
       .getOrCreate();
 
     JavaSparkContext jsc = new JavaSparkContext(spark.sparkContext());
